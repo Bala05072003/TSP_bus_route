@@ -40,6 +40,7 @@ public class BruteForceTSP implements TSPAlgorithm {
     }
 
     private double calculateTotalDistance(Point start, List<Point> points) {
+        if (points == null || points.isEmpty()) return 0;
         double dist = calculateDistance(start, points.get(0));
         for (int i = 0; i < points.size() - 1; i++) {
             dist += calculateDistance(points.get(i), points.get(i+1));
